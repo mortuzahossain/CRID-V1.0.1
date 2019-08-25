@@ -2,6 +2,15 @@
     $PAGENAME = "Register";
     include 'inc/header.php';
     include 'inc/navbar.php';
+    
+    function xss_cleaner($input_str) {
+        $return_str = str_replace( array('<',';','|','&','>',"'",'"',')','('), array('&lt;','&#58;','&#124;','&#38;','&gt;','&apos;','&#x22;','&#x29;','&#x28;'), $input_str );
+        $return_str = str_ireplace( '%3Cscript', '', $return_str );
+        return $return_str;
+    }
+
+
+
 
 /*    if (isset($_POST['submit'])) {
         $name = $_POST['name'];
@@ -24,8 +33,29 @@
     <section class="container">
 <p></p>
 
-<div class="alert alert-success" role="alert">Sucess Msg</div>
-<div class="alert alert-warning" role="alert">Worning Msg</div>
+
+<?php
+    if (isset($_POST['submit'])) {
+        $name = xss_cleaner(htmlspecialchars($_POST['name']));
+        $email = xss_cleaner(htmlspecialchars($_POST['email']));
+        $password = md5($_POST['password']);
+        $confirm_password = md5($_POST['confirm_password']);
+        $gender = xss_cleaner(htmlspecialchars($_POST['gender']));
+        $account_type = xss_cleaner(htmlspecialchars($_POST['account_type']));
+
+        if ($password !== $confirm_password) {
+            echo "<div class='alert alert-warning' role='alert'>Password Are Not Same. PLease Try Again</div>";
+        } else {
+            $sql = "INSERT INTO users (name,email,password,gender,account_type) VALUES ('$name','$email','$password','$gender','$account_type')";
+            if (mysqli_query($con,$sql)) {
+                echo "<div class='alert alert-success' role='alert'>Registration Complete. Please Login Now.</div>";
+            } else {
+                echo "<div class='alert alert-warning' role='alert'>We are fetching problem in registering you. PLease check your email again.</div>";
+            }
+        }
+
+    }
+?>
 
         <div class="row">
             <div class="col-md-6">
@@ -45,7 +75,7 @@
             <div class="col-md-6">
                 <div class="gap"></div>
 
-            <form action="thanks.php" method="post">
+            <form action="" method="post">
               <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" class="form-control" id="name" name="name" placeholder="Type Your name" required>
@@ -67,11 +97,15 @@
                 <input type="radio" name="gender" value="Male" required="1"> Male <br>
                 <input type="radio" name="gender" value="Female" required="1"> Female<br>
               </div>
-              <select class="form-control" required="1" name="account_type">
-                  <option value="Enthusiast/Learner">Enthusiast/Learner</option>
-                  <option value="Professional/Expert">Professional/Expert</option>
-                  <option value="Mentor/Trainer">Mentor/Trainer</option>
-              </select>
+              
+              <div class="form-group">
+                  <label for="account_type">Account Type</label>
+                  <select class="form-control" required="1" name="account_type">
+                      <option value="Enthusiast/Learner">Enthusiast/Learner</option>
+                      <option value="Professional/Expert">Professional/Expert</option>
+                      <option value="Mentor/Trainer">Mentor/Trainer</option>
+                  </select>
+              </div>
               <div class="gap"></div>
               <input  type="submit" name="submit" value="Register" class="btn btn-primary">
             </form>
