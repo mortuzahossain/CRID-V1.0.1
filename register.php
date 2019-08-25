@@ -22,6 +22,11 @@
     }*/
 ?>
     <section class="container">
+<p></p>
+
+<div class="alert alert-success" role="alert">Sucess Msg</div>
+<div class="alert alert-warning" role="alert">Worning Msg</div>
+
         <div class="row">
             <div class="col-md-6">
                 <h2>Register now</h2>
