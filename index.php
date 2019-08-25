@@ -46,7 +46,18 @@
                                 <i class="fa fa-rocket fa fa-md"></i>
                             </div>
                             <div class="media-body fade-up">
-                                <h3 class="media-heading">Improvise your prototype</h3>
+                                <h3 class="media-heading">Bring us your prototype</h3>
+                                <p>You bring your dream prototype to us and we will give you all the support that you need.</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="service-block">
+                            <div class="pull-left bounce-in">
+                                <i class="fa fa-thermometer-full fa fa-md"></i>
+                            </div>
+                            <div class="media-body fade-up">
+                                <h3 class="media-heading">Improvise it at our lab</h3>
                                 <p>If you've got an idea and you want to implement that in real life, we're here for your. We have experts from different domains to deliver you industry grade products.</p>
                             </div>
                         </div>
@@ -54,10 +65,34 @@
                     <div class="col-md-4 col-sm-6">
                         <div class="service-block">
                             <div class="pull-left bounce-in">
-                                <i class="fa fa-thumbs-o-up fa fa-md"></i>
+                                <i class="fa fa-money fa fa-md"></i>
                             </div>
                             <div class="media-body fade-up">
-                                <h3 class="media-heading">Lab access for you</h3>
+                                <h3 class="media-heading">Funding for your dream machine</h3>
+                                <p>We don't want anyone to lose hope. We're more than happy to fund any creative project.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="service-block">
+                            <div class="pull-left bounce-in">
+                                <i class="fa fa-file-powerpoint-o fa fa-md"></i>
+                            </div>
+                            <div class="media-body fade-up">
+                                <h3 class="media-heading">We will help you to patent it</h3>
+                                <p>If you've got an idea and you want to implement that in real life, we're here for your. We have experts from different domains to deliver you industry grade products.</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="service-block">
+                            <div class="pull-left bounce-in">
+                                <i class="fa fa-shopping-cart fa fa-md"></i>
+                            </div>
+                            <div class="media-body fade-up">
+                                <h3 class="media-heading">Market it</h3>
                                 <p>We ensure world class research facilities so that you can work on your projects and get suggestions from experts.</p>
                             </div>
                         </div>
@@ -65,16 +100,15 @@
                     <div class="col-md-4 col-sm-6">
                         <div class="service-block">
                             <div class="pull-left bounce-in">
-                                <i class="fa fa-ticket fa fa-md"></i>
+                                <i class="fa fa-paper-plane fa fa-md"></i>
                             </div>
                             <div class="media-body fade-up">
-                                <h3 class="media-heading">Funding for your dream machine</h3>
+                                <h3 class="media-heading">Be a successful Innovator</h3>
                                 <p>We don't want anyone to lose hope. We're more than happy to fund any creative project.</p>
                             </div>
                         </div>
                     </div><!--/.col-md-4-->
                 </div><!--/.row-->
-                <div class="gap"></div>
             </div>
 
 
