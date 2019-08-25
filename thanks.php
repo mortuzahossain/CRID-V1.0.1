@@ -2,9 +2,6 @@
     $PAGENAME = "Thanks";
     include 'inc/header.php';
     include 'inc/navbar.php';
-    // Save data into database. 
-	
-	//$con = mysqli_connect("localhost","tashfeencrid_mortuza","DAM@dhaka","tashfeencrid_newcrid");
 
     if (isset($_POST['submit'])) {
         $name = $_POST['name'];
