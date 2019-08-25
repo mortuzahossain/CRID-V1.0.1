@@ -4,7 +4,7 @@
     include 'inc/navbar.php';
     // Save data into database. 
 	
-	$con = mysqli_connect("localhost","tashfeencrid_mortuza","DAM@dhaka","tashfeencrid_newcrid");
+	//$con = mysqli_connect("localhost","tashfeencrid_mortuza","DAM@dhaka","tashfeencrid_newcrid");
 
     if (isset($_POST['submit'])) {
         $name = $_POST['name'];
@@ -25,7 +25,7 @@
     }
 ?>
     <section class="container text-center">
-        <img src="http://home.criddam.com/images/1.gif" alt="Thanks Image">
+        <img height="130px" src="http://home.criddam.com/images/1.gif" alt="Thanks Image">
         <h1>Thanks For your Email. <br> We will get back to you as soon as possible.</h1>
         <a href="/"><p class="btn btn-primary btn-lg">Home</p></a>
     </section>
