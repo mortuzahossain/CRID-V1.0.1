@@ -13,7 +13,7 @@
 
             <div class="row gap text-center">
                 <a class="btn btn-primary" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/student-registration.php"><span>Student Registration Form</span></a> <i class="fa fa-child side-gap"></i>
-                <a class="btn btn-info" href="http://criddam.com/instructor-registration-form/"><span>Instructor Registration Form</span></a>
+                <a class="btn btn-info" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/instructor-registration.php"><span>Instructor Registration Form</span></a>
             </div>
 
             <div class="traing-section">

@@ -1,5 +1,5 @@
 <?php
-    $PAGENAME = "Register";
+    $PAGENAME = "Student Registration";
     include 'inc/header.php';
     include 'inc/navbar.php';
     
