@@ -13,6 +13,45 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="gap"></div>
+<?php
+    if (isset($_POST['submit'])) {
+        $name = xss_cleaner(htmlspecialchars($_POST['name']));
+        $mailing_address = xss_cleaner(htmlspecialchars($_POST['mailing_address']));
+        $zipcode = xss_cleaner(htmlspecialchars($_POST['zipcode']));
+        $city = xss_cleaner(htmlspecialchars($_POST['city']));
+        $contact_number = xss_cleaner(htmlspecialchars($_POST['contact_number']));
+        $dob = xss_cleaner(htmlspecialchars($_POST['dob']));
+        $email = xss_cleaner(htmlspecialchars($_POST['email']));
+        $nid = xss_cleaner(htmlspecialchars($_POST['nid']));
+        $previous_experiance = xss_cleaner(htmlspecialchars($_POST['previous_experiance']));
+        $occupation = xss_cleaner(htmlspecialchars($_POST['occupation']));
+        $other_information = xss_cleaner(htmlspecialchars($_POST['other_information']));
+        $language = xss_cleaner(htmlspecialchars($_POST['language']));
+        $class_time = $_POST['class_time'];
+        $convicted_with_violation = xss_cleaner(htmlspecialchars($_POST['convicted_with_violation']));
+        $health_problem = xss_cleaner(htmlspecialchars($_POST['health_problem']));
+        $emergency_contact = xss_cleaner(htmlspecialchars($_POST['emergency_contact']));
+        $emergency_contact_number = xss_cleaner(htmlspecialchars($_POST['emergency_contact_number']));
+
+        $class_time = join(",",$class_time);
+        
+        // $ctime = xss_cleaner($_POST['ctime']);
+
+        // id, name, mailing_address, zipcode, city, contact_number, dob, email, nid, previous_experiance, occupation, other_information, language, class_time, convicted_with_violation, health_problem, emergency_contact, emergency_contact_number
+
+        $sql = "INSERT INTO instructors_registration (name, mailing_address, zipcode, city, contact_number, dob, email, nid, previous_experiance, occupation, other_information, language, class_time, convicted_with_violation, health_problem, emergency_contact, emergency_contact_number) VALUES ('$name','$mailing_address', '$zipcode', '$city', '$contact_number', '$dob', '$email', '$nid', '$previous_experiance', '$occupation', '$other_information', '$language', '$class_time', '$convicted_with_violation', '$health_problem', '$emergency_contact', '$emergency_contact_number')";
+
+        if (mysqli_query($con,$sql)) {
+            echo "<div class='alert alert-success' role='alert'>WOW !!! Your registration is complete We will come back to you soon.</div>";
+        } else {
+            echo "<div class='alert alert-warning' role='alert'>We are fetching problem in registering you. PLease make sure you are registering first time. Or please contact us.</div>";
+        }
+
+        // echo $sql;
+    }
+
+?>
+                
                 <h2 class="text-center">Instructor Registration Form</h2>
                 <hr>
                 <div class="gap"></div>
@@ -65,7 +104,7 @@
                     <label for="language">Language</label>
                     <input type="text" class="form-control" id="language" name="language" required>
                   </div>
-                  
+
                   <label for="">Checkboxes *</label>
                   <div class="form-check">
                       <input class="form-check-input" name="class_time[]" type="checkbox" value="Morning (Mon-Fri)" id="Morning">
