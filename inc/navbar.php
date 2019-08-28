@@ -18,7 +18,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account<i class="icon-angle-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="http://criddam.com/login/">Login</a></li>
+                        <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/login.php">Login</a></li>
                         <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/register.php">Signup</a></li>
                     </ul>
                 </li>
