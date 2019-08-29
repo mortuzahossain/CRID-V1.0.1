@@ -18,8 +18,12 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account<i class="icon-angle-down"></i></a>
                     <ul class="dropdown-menu">
+                        <?php if (!isset($_SESSION['id'])) { ?>
                         <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/login.php">Login</a></li>
                         <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/register.php">Signup</a></li>
+                        <?php } else { ?>
+                        <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/logout.php">Logout</a></li>
+                        <?php } ?>
                     </ul>
                 </li>
             </ul>
