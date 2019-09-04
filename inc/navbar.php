@@ -12,6 +12,9 @@
                 <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/">Home</a></li>
                 <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/training.php">Training</a></li>
                 <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/rbcommunity.php">Community</a></li>
+                <?php if (isset($_SESSION['id'])) { ?>
+                    <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/blog/">Blog</a></li>
+                <?php } ?>
                 <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/aboutus.php">About Us</a></li>
                 <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/contactus.php">Contact</a></li>
                 <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/career.php">Career</a></li>
@@ -22,6 +25,8 @@
                         <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/login.php">Login</a></li>
                         <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/register.php">Signup</a></li>
                         <?php } else { ?>
+                        <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/user/">Account</a></li>
+                        <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/user/blog/">Blog</a></li>
                         <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/logout.php">Logout</a></li>
                         <?php } ?>
                     </ul>

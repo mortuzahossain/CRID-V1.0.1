@@ -17,10 +17,10 @@
         </div>
     </footer>
 
-    <script src="js/jquery.js"></script>
+    <script src="http://<?php echo $_SERVER['SERVER_NAME']; ?>/js/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
-    <script src="js/others.js"></script>
+    <script src="http://<?php echo $_SERVER['SERVER_NAME']; ?>/js/others.js"></script>
 
 </body>
 </html>
