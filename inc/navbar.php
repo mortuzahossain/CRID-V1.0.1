@@ -12,12 +12,12 @@
                 <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/">Home</a></li>
                 <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/training.php">Training</a></li>
                 <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/rbcommunity.php">Community</a></li>
-                <?php if (isset($_SESSION['id'])) { ?>
-                    <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/blog/">Blog</a></li>
-                <?php } ?>
                 <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/aboutus.php">About Us</a></li>
                 <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/contactus.php">Contact</a></li>
                 <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/career.php">Career</a></li>
+                <?php if (isset($_SESSION['id'])) { ?>
+                    <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/blog/">Blog</a></li>
+                <?php } ?>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account<i class="icon-angle-down"></i></a>
                     <ul class="dropdown-menu">
@@ -31,6 +31,9 @@
                         <?php } ?>
                     </ul>
                 </li>
+                <?php if (isset($_SESSION['id'])) { ?>
+                    <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/blog/search.php"><i class="fa fa-search"></i></a></li>
+                <?php } ?>
             </ul>
         </div>
     </div>

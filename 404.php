@@ -5,25 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Md Mortuza Hossain">
-    <title>Home | CRID-DAM ROBOTIC LABS</title>
+    <title>404 Error | CRID-DAM ROBOTIC LABS</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/css/style.css" rel="stylesheet">
     
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
-    
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon" sizes="144x144" href="images/ico/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/ico/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/ico/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" href="images/ico/apple-touch-icon-57x57.png">
-
-
-
 
 </head><!--/head-->
 <body>
@@ -34,8 +25,8 @@
     <section class="container text-center">
         <img src="images/404.gif" alt="404 Error">
         <h1>We are sorry and don't understand what you are looking for.</h1>
-        <p>Please find something else or <a href="/">Go home</a>.</p>
-        <a href="/"><p class="btn btn-primary btn-lg">Home</p></a>
+        <p>Please find something else or <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/">Go home</a>.</p>
+        <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/"><p class="btn btn-primary btn-lg">Home</p></a>
     </section>
 
     <footer id="footer" class="text-center">
@@ -46,7 +37,7 @@
         </div>
     </footer>
 
-    <script src="js/jquery.js"></script>
+    <script src="http://<?php echo $_SERVER['SERVER_NAME']; ?>/js/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>
