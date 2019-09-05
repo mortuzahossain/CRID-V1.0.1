@@ -42,7 +42,7 @@
                     </h3>
                   </a>
                   <p class="post-meta">Posted by
-                    <a href="#"><?php echo $row['publisher_name']; ?></a>
+                    <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/blog/search.php?s=<?php echo $row['publisher_name']; ?>"><?php echo $row['publisher_name']; ?></a>
                     on <?php echo $row['publishtime']; ?></p>
                 </div>
                 <hr>
@@ -65,11 +65,11 @@
             for ($i=1; $i <= $total ; $i++) {
             if ($i == $current_page) {
             ?>
-              <a class="btn btn-warning float-right" href="index.php?id=<?php echo $i; ?>"><?php echo $i; ?></a>
+              <a class="btn btn-warning float-right" href="index.php?p=<?php echo $i; ?>"><?php echo $i; ?></a>
             <?php
                 } else {
             ?>
-              <a class="btn btn-primary float-right" href="index.php?id=<?php echo $i; ?>"><?php echo $i; ?></a>
+              <a class="btn btn-primary float-right" href="index.php?p=<?php echo $i; ?>"><?php echo $i; ?></a>
             <?php } } ?>
         </div>
 

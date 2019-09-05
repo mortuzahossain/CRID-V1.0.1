@@ -13,10 +13,15 @@
         $startpage = 0;
     }
 
-    $sql = "SELECT * FROM blogs WHERE published = 1 ORDER BY id DESC LIMIT $startpage,".POST_PER_PAGE;
-    $result = mysqli_query($con,$sql);
-    $countblogs = mysqli_num_rows($result);
+    $countblogs = 0;
 
+    if (isset($_GET['s']) or isset($_GET['submit'])) {
+        $search = $_GET['s'];
+        $sql = "SELECT * FROM blogs WHERE published = 1 AND CONCAT(`title`, `body`, `published`, `publisher_name`) LIKE '%".$search."%' ORDER BY id DESC LIMIT $startpage,".POST_PER_PAGE;
+        $result = mysqli_query($con,$sql);
+        $countblogs = mysqli_num_rows($result);
+    }
+    
 ?>
 
 <style type="text/css">.post-preview>a{color:#212529}.post-preview>a:focus,.post-preview>a:hover{text-decoration:none;color:#0085a1}.post-preview>a>.post-title{font-size:30px;margin-top:30px;margin-bottom:10px}.post-preview>a>.post-subtitle{font-weight:300;margin:0 0 10px}.post-preview>.post-meta{font-size:18px;font-style:italic;margin-top:0;color:#868e96}.post-preview>.post-meta>a{text-decoration:none;color:#212529}.post-preview>.post-meta>a:focus,.post-preview>.post-meta>a:hover{text-decoration:underline;color:#0085a1}@media only screen and (min-width:768px){.post-preview>a>.post-title{font-size:36px}}.btn{font-size:14px;font-weight:800;letter-spacing:1px;text-transform:uppercase;border-radius:0;font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif}.btn-primary{background-color:#0085a1;border-color:#0085a1}.btn-primary:active,.btn-primary:focus,.btn-primary:hover{color:#fff;background-color:#00657b!important;border-color:#00657b!important}</style>
@@ -26,9 +31,9 @@
 	<hr>
     <div class="row">
         <div class="col-md-6 col-md-offset-3 text-center">
-            <form class="form-inline">
+            <form method="get" class="form-inline">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
+                <input type="text" class="form-control" name="s" placeholder="Search">
               </div>
               <button type="submit" class="btn btn-primary">Search</button>
             </form>
@@ -50,7 +55,7 @@
                     </h3>
                   </a>
                   <p class="post-meta">Posted by
-                    <a href="#"><?php echo $row['publisher_name']; ?></a>
+                    <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/blog/search.php?s=<?php echo $row['publisher_name']; ?>"><?php echo $row['publisher_name']; ?></a>
                     on <?php echo $row['publishtime']; ?></p>
                 </div>
                 <hr>
@@ -73,11 +78,11 @@
             for ($i=1; $i <= $total ; $i++) {
             if ($i == $current_page) {
             ?>
-              <a class="btn btn-warning float-right" href="index.php?id=<?php echo $i; ?>"><?php echo $i; ?></a>
+              <a class="btn btn-warning float-right" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/blog/search.php?p=<?php echo $i; ?>"><?php echo $i; ?></a>
             <?php
                 } else {
             ?>
-              <a class="btn btn-primary float-right" href="index.php?id=<?php echo $i; ?>"><?php echo $i; ?></a>
+              <a class="btn btn-primary float-right" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/blog/search.php?p=<?php echo $i; ?>"><?php echo $i; ?></a>
             <?php } } ?>
         </div>
 
