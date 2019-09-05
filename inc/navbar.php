@@ -25,7 +25,7 @@
                         <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/login.php">Login</a></li>
                         <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/register.php">Signup</a></li>
                         <?php } else { ?>
-                        <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/user/">Account</a></li>
+                        <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/user/">Profile</a></li>
                         <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/user/blog/">Blog</a></li>
                         <li><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/logout.php">Logout</a></li>
                         <?php } ?>
