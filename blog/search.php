@@ -13,10 +13,17 @@
         $startpage = 0;
     }
 
+    function xss_cleaner($input_str) {
+        $return_str = str_replace( array('<',';','|','&','>',"'",'"',')','('), array('&lt;','&#58;','&#124;','&#38;','&gt;','&apos;','&#x22;','&#x29;','&#x28;'), $input_str );
+        $return_str = str_ireplace( '%3Cscript', '', $return_str );
+        return htmlspecialchars($return_str);
+    }
+
     $countblogs = 0;
 
     if (isset($_GET['s']) or isset($_GET['submit'])) {
-        $search = $_GET['s'];
+        $search = xss_cleaner($_GET['s']);
+        // Filter search string
         $sql = "SELECT * FROM blogs WHERE published = 1 AND CONCAT(`title`, `body`, `published`, `publisher_name`) LIKE '%".$search."%' ORDER BY id DESC LIMIT $startpage,".POST_PER_PAGE;
         $result = mysqli_query($con,$sql);
         $countblogs = mysqli_num_rows($result);
