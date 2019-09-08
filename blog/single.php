@@ -1,4 +1,9 @@
 <?php
+    // Resticted Blog Users
+    session_start();
+    if (!isset($_SESSION['id'])) {
+        header("Location: ../index.php");
+    }
     $PAGENAME = "Blog Post";
     if (!isset($_GET['id'])) {
       echo '<script>document.location.replace("index.php");</script>';

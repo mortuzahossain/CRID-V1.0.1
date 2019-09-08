@@ -16,7 +16,7 @@
     <script src="js/respond.min.js"></script>
     <![endif]-->
 
-</head><!--/head-->
+</head>
 <body>
 
     <?php include 'inc/navbar.php'; ?>

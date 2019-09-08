@@ -1,4 +1,9 @@
 <?php
+    session_start();
+    if (!isset($_SESSION['id'])) {
+        header("Location: ../index.php");
+    }
+
     $PAGENAME = "Blog";
     define('POST_PER_PAGE', 10);
     
