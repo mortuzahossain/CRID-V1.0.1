@@ -65,7 +65,7 @@
 
         <div class="clearfix">
         <?php
-            $sql = "SELECT id FROM blogs WHERE published = 1";
+            $sql = "SELECT * FROM blogs WHERE published = 1 AND CONCAT(`title`, `body`, `published`, `publisher_name`) LIKE '%".$search."%' ORDER BY id DESC";
             $total = mysqli_num_rows(mysqli_query($con,$sql));
             $total = ceil($total/POST_PER_PAGE);
 
