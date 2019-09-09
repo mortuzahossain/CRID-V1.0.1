@@ -26,6 +26,7 @@
             echo "<div class='alert alert-warning' role='alert'>Password Are Not Same. PLease Try Again</div>";
         } else {
             $sql = "INSERT INTO users (name,email,password,gender,account_type) VALUES ('$name','$email','$password','$gender','$account_type')";
+            // echo $sql;
             if (mysqli_query($con,$sql)) {
                 echo "<div class='alert alert-success' role='alert'>Registration Complete. Please Login Now.</div>";
             } else {

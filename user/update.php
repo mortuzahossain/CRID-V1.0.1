@@ -30,7 +30,7 @@
 		$update_query = "UPDATE users set name = '$name',gender = '$gender',account_type = '$account_type' WHERE id = $userid";
 
 		if (mysqli_query($con,$update_query)) {
-			echo "<div class='alert alert-success' role='alert'>User information updated sucessfully.</div>";
+			echo "<div class='alert alert-success' role='alert'>User information updated successfully.</div>";
 		} else {
 			echo "<div class='alert alert-warning' role='alert'>We are fetching problem in updating your information.</div>";
 		}

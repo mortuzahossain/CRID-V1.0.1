@@ -12,7 +12,7 @@
         return htmlspecialchars($return_str);
     }
 
-	$PAGENAME = "Update Users Profile";
+	$PAGENAME = "Update Users Passqord";
 	include $_SERVER["DOCUMENT_ROOT"].'/inc/header.php';
 	include $_SERVER["DOCUMENT_ROOT"].'/inc/navbar.php';
 ?>
@@ -31,10 +31,12 @@
 			$update_query = "UPDATE users set password = '$password' WHERE id = $userid";
 
 			if (mysqli_query($con,$update_query)) {
-				echo "<div class='alert alert-success' role='alert'>Password updated sucessfully.</div>";
+				echo "<div class='alert alert-success' role='alert'>Password updated successfully.</div>";
 			} else {
 				echo "<div class='alert alert-warning' role='alert'>We are fetching problem in updating your information.</div>";
 			}
+		} else {
+			echo "<div class='alert alert-warning' role='alert'>Password Not Same Please type .</div>";
 		}
 
 		
