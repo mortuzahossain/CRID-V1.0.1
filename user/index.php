@@ -3,6 +3,7 @@
     if (!isset($_SESSION['id'])) {
         header("Location: ../index.php");
     }
+    $userid =$_SESSION['id'];
 
 	$PAGENAME = "Users Profile";
 	include $_SERVER["DOCUMENT_ROOT"].'/inc/header.php';
@@ -13,21 +14,23 @@
 	<section class="container about-section">
 		<div class="gap"></div>
 		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
 				<ul class="nav nav-tabs">
-				  <li role="presentation" class="active"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/user/index.php">Home</a></li>
+				  <li role="presentation"  class="active"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/user/index.php">Home</a></li>
 				  <li role="presentation"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/user/update.php">Update Profile</a></li>
 				  <li role="presentation"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/user/updatepassword.php">Update Password</a></li>
+				  <li role="presentation"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/user/profileimage.php">Upload Image</a></li>
 				  <li role="presentation"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/user/blog">Blogs</a></li>
 				  <li role="presentation"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/user/blog">Add Blog</a></li>
 				  <li role="presentation"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/user/delete.php">Delete Account</a></li>
 				</ul>
 			</div>
 		</div>
-
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
 				<h2 class="text-center">User's Information</h2>
+				<img class="img-responsive img-circle" style="margin: 0 auto; margin-bottom: 20px;" height="300px" width="300px" src="images/<?php echo $userid.'.jpg' ?>" alt="User Image">
 				<?php
 					$userid =$_SESSION['id'];
 					$sql = "SELECT * FROM users WHERE id = $userid";
