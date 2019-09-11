@@ -45,7 +45,13 @@
 
                     <hr>
 
-                    <a href="deleteblog.php?id=<?php echo $id; ?>" class="btn btn-danger">Delete</a>
+                    <?php if ($result['published'] == 0) { ?>
+                    <a href="actieve.php?id=<?php echo $id; ?>" class="btn btn-primary">Actieve</a>
+                    <?php }else{ ?>
+                    <a href="deleteblog.php?id=<?php echo $id; ?>" class="btn btn-danger">Delete</a>;
+                    <?php } ?>
+
+                    
                 </div>
             </div>
 

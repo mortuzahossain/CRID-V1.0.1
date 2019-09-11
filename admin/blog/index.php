@@ -26,7 +26,7 @@
                     $startpage = 0;
                 }
 
-                $sql = "SELECT blogs.*,users.name FROM blogs INNER JOIN users ON blogs.uid = users.id WHERE blogs.published = 1 ORDER BY blogs.id DESC LIMIT $startpage,".POST_PER_PAGE;
+                $sql = "SELECT blogs.*,users.name FROM blogs INNER JOIN users ON blogs.uid = users.id ORDER BY blogs.id DESC LIMIT $startpage,".POST_PER_PAGE;
                 $result = mysqli_query($con,$sql);
                 $blogscount = mysqli_num_rows($result);
 
