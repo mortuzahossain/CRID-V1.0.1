@@ -5,7 +5,7 @@
     }
     $userid =$_SESSION['id'];
 
-	$PAGENAME = "Users Profile";
+	$PAGENAME = "All blog post by user.";
 	include $_SERVER["DOCUMENT_ROOT"].'/inc/header.php';
 	include $_SERVER["DOCUMENT_ROOT"].'/inc/navbar.php';
 ?>
@@ -21,8 +21,7 @@
 				  <li role="presentation"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/user/update.php">Update Profile</a></li>
 				  <li role="presentation"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/user/updatepassword.php">Update Password</a></li>
 				  <li role="presentation"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/user/profileimage.php">Upload Image</a></li>
-				  <li role="presentation"   class="active"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/user/blog">Blogs</a></li>
-				  <li role="presentation"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/user/blog">Add Blog</a></li>
+				  <li role="presentation"   class="active"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/user/blog">Blogs</a></li><li role="presentation"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/user/blog/addblog.php">Add Blog</a></li>
 				  <li role="presentation"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/user/delete.php">Delete Account</a></li>
 				</ul>
 			</div>
@@ -42,8 +41,8 @@
 
     <table class="table table-striped table-hover">
         <tr>
-            <th>Title</th>
-            <th></th>
+            <th width="90%">Title</th>
+            <th width="10%"></th>
         </tr>
 
     <?php while ($row = mysqli_fetch_assoc($result)) { ?>
