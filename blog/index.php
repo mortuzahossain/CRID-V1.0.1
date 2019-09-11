@@ -18,7 +18,7 @@
         $startpage = 0;
     }
 
-    $sql = "SELECT * FROM blogs WHERE published = 1 ORDER BY id DESC LIMIT $startpage,".POST_PER_PAGE;
+    $sql = "SELECT blogs.*,users.name FROM blogs INNER JOIN users ON blogs.uid = users.id WHERE blogs.published = 1 ORDER BY blogs.id DESC LIMIT $startpage,".POST_PER_PAGE;
     $result = mysqli_query($con,$sql);
     $countblogs = mysqli_num_rows($result);
 
@@ -47,7 +47,7 @@
                     </h3>
                   </a>
                   <p class="post-meta">Posted by
-                    <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/blog/search.php?s=<?php echo $row['publisher_name']; ?>"><?php echo $row['publisher_name']; ?></a>
+                    <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/blog/search.php?s=<?php echo $row['name']; ?>"><?php echo $row['name']; ?></a>
                     on <?php echo $row['publishtime']; ?></p>
                 </div>
                 <hr>

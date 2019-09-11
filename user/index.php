@@ -30,7 +30,7 @@
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
 				<h2 class="text-center">User's Information</h2>
-				<img class="img-responsive img-circle" style="margin: 0 auto; margin-bottom: 20px;" height="200px" width="200px" src="images/<?php echo $userid.'.jpg' ?>" alt="User Image">
+				<img class="img-responsive img-circle" style="margin: 0 auto; margin-bottom: 20px;" height="200px" width="200px" src="images/<?php echo $userid.'.jpg' ?>" alt="Profile Image is not uploaded.">
 				<?php
 					$userid =$_SESSION['id'];
 					$sql = "SELECT * FROM users WHERE id = $userid";

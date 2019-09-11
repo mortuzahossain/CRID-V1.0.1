@@ -28,7 +28,8 @@
     if (isset($_GET['s']) or isset($_GET['submit'])) {
         $search = xss_cleaner($_GET['s']);
         // Filter search string
-        $sql = "SELECT * FROM blogs WHERE published = 1 AND CONCAT(`title`, `body`, `published`, `publisher_name`) LIKE '%".$search."%' ORDER BY id DESC LIMIT $startpage,".POST_PER_PAGE;
+        $sql = "SELECT blogs.*,users.name FROM blogs INNER JOIN users ON blogs.uid = users.id WHERE blogs.published = 1 AND CONCAT(`title`, `body`, `published`,`name`) LIKE '%".$search."%' ORDER BY blogs.id DESC LIMIT  $startpage,".POST_PER_PAGE;
+        // echo $sql;
         $result = mysqli_query($con,$sql);
         $countblogs = mysqli_num_rows($result);
     }
@@ -66,7 +67,7 @@
                     </h3>
                   </a>
                   <p class="post-meta">Posted by
-                    <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/blog/search.php?s=<?php echo $row['publisher_name']; ?>"><?php echo $row['publisher_name']; ?></a>
+                    <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/blog/search.php?s=<?php echo $row['name']; ?>"><?php echo $row['name']; ?></a>
                     on <?php echo $row['publishtime']; ?></p>
                 </div>
                 <hr>
@@ -76,7 +77,7 @@
 
         <div class="clearfix">
         <?php
-            $sql = "SELECT * FROM blogs WHERE published = 1 AND CONCAT(`title`, `body`, `published`, `publisher_name`) LIKE '%".$search."%' ORDER BY id DESC";
+            $sql = "SELECT * FROM blogs INNER JOIN users ON blogs.uid = users.id WHERE blogs.published = 1 AND CONCAT(`title`, `body`, `published`,`name`) LIKE '%".$search."%' ORDER BY blogs.id DESC";
             $total = mysqli_num_rows(mysqli_query($con,$sql));
             $total = ceil($total/POST_PER_PAGE);
 
