@@ -4,9 +4,6 @@
   include '../inc/navbar.php';
 ?>
 
-
-
-
     <section id="main">
       <div class="container">
         <div class="row">

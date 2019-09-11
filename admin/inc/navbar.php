@@ -31,7 +31,6 @@
                 <span class="caret"></span>
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li><a href="<?php echo SCRIPT_ROOT; ?>/admin/blog/createblog.php">Add Blog</a></li>
                 <li><a href="<?php echo SCRIPT_ROOT; ?>/admin/career/createcareer.php">Add Career</a></li>
               </ul>
             </div>

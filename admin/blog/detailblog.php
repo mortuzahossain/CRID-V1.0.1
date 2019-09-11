@@ -45,7 +45,7 @@
 
                     <hr>
 
-                    <a href="editblog.php?id=<?php echo $id; ?>" class="btn btn-primary">Edit</a> || <a href="deleteblog.php?id=<?php echo $id; ?>" class="btn btn-danger">Delete</a>
+                    <a href="deleteblog.php?id=<?php echo $id; ?>" class="btn btn-danger">Delete</a>
                 </div>
             </div>
 
